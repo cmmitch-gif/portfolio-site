@@ -423,8 +423,8 @@ section.welcome .title {
 }
 
 .slide img {
-    width: 280px;  /* Fixed width for all images */
-    height: auto;  /* Height will adjust proportionally */
+    height: 320px;  /* Fixed height instead of width */
+    width: auto;    /* Let width adjust naturally */
     object-fit: contain;
     border-radius: 12px;
 }
@@ -435,7 +435,7 @@ section.welcome .title {
     }
 
     .slide img {
-        width: 200px;  /* Smaller fixed width for mobile */
+        height: 220px;  /* Smaller height for mobile */
     }
 }
 
