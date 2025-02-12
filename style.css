@@ -367,8 +367,27 @@ section.welcome .title {
 }
 
 .about-text {
-    grid-column: 1 / span 4;
+    grid-column: 6 / span 4;
     margin-top: var(--spacing-md);
+    align-self: start;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .about-section {
+        grid-template-columns: 1fr;
+        margin: 0 var(--spacing-md);
+        gap: var(--spacing-sm);
+    }
+
+    .about-image,
+    .about-text {
+        grid-column: 1 / -1;
+    }
+
+    .about-text {
+        margin-top: var(--spacing-sm);
+    }
 }
 
 /* Slideshow Container */
