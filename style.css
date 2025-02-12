@@ -757,6 +757,78 @@ section.welcome .title {
     .welcome-text .greeting {
         margin-bottom: var(--spacing-xs);
     }
+
+    /* Project Page Layout */
+    .project-page {
+        margin: 0 var(--spacing-sm);
+    }
+
+    /* Project Header */
+    .project-header {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+        margin: var(--spacing-lg) 0;
+    }
+
+    /* Project Sections */
+    .project-section {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--spacing-md);
+        margin: var(--spacing-xl) 0;
+    }
+
+    /* Goals Section */
+    .project-section.goals .section-image {
+        grid-column: 1 / span 3;
+        grid-row: 1;
+    }
+
+    .project-section.goals .section-content {
+        grid-column: 2 / span 3;
+        grid-row: 2;
+    }
+
+    /* Action Section */
+    .project-section.action .section-image {
+        grid-column: 2 / span 3;
+        grid-row: 1;
+    }
+
+    .project-section.action .section-content {
+        grid-column: 1 / span 3;
+        grid-row: 2;
+    }
+
+    /* Results Section */
+    .project-section.results .section-image {
+        grid-column: 1 / span 3;
+        grid-row: 1;
+    }
+
+    .project-section.results .section-content {
+        grid-column: 2 / span 3;
+        grid-row: 2;
+    }
+
+    /* Typography adjustments */
+    .project-title h1 {
+        font-size: 32px;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .section-content h2 {
+        font-size: 24px;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    /* Image adjustments */
+    .section-image img {
+        width: 100%;
+        height: auto;
+        margin-bottom: var(--spacing-sm);
+    }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
