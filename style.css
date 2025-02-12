@@ -609,24 +609,16 @@ section.welcome .title {
 
     section.welcome .welcome-text {
         display: flex;
-        flex-direction: row;  /* Keep text inline */
-        flex-wrap: nowrap;    /* Prevent wrapping */
-        align-items: baseline;
-        gap: 12px;           /* Space between "Hi!" and "I'm Mitchell" */
+        flex-direction: column;  /* Changed from row to column */
+        align-items: flex-start; /* Align text to the left */
+        gap: 0;                 /* Remove gap between lines */
     }
 
     section.welcome h1 {
-        font-size: 48px;     /* Smaller font size for mobile */
-        white-space: nowrap; /* Prevent text wrapping */
-        margin: 0;          /* Remove default margins */
-    }
-
-    section.welcome h1 {
-        font-size: 96px;
-    }
-
-    section.welcome.about h1 {
-        font-size: 96px;
+        font-size: 64px;        /* Reduced from 96px to 64px */
+        white-space: normal;    /* Allow text to wrap naturally */
+        line-height: 1;         /* Tighter line height */
+        margin: 0;
     }
 
     .projects {
