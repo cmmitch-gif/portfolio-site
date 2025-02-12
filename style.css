@@ -75,6 +75,8 @@ nav {
     display: flex;
     gap: 40px;
     align-items: center;
+    margin-left: auto;  /* Push nav items to the right */
+    padding-left: var(--spacing-xl);  /* Add space between name and nav */
 }
 
 nav a {
@@ -1180,5 +1182,161 @@ section.welcome .title {
 
     .mitchell-name {
         white-space: nowrap;  /* Prevent name from wrapping */
+    }
+}
+
+/* Mobile Project Page Styles */
+@media (max-width: 768px) {
+    /* Project Page Container */
+    .project-page {
+        margin: 0;
+    }
+
+    /* Project Header */
+    .project-header {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+
+    /* Hero Image */
+    .hero-image {
+        order: -1;
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+    }
+
+    .hero-image img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 0;
+    }
+
+    /* Project Title */
+    .project-title {
+        padding: var(--spacing-md);
+        position: static;
+    }
+
+    .project-title h1 {
+        font-size: 32px;
+        line-height: 1.2;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .project-intro {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    /* Project Sections */
+    .project-section {
+        display: flex;
+        flex-direction: column;
+        margin: var(--spacing-xl) 0;
+        gap: 0;
+    }
+
+    .section-image {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+    }
+
+    .section-image img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 0;
+    }
+
+    .section-content {
+        padding: var(--spacing-md);
+        background: var(--color-background);
+        margin-top: -40px;
+        margin-left: var(--spacing-sm);
+        margin-right: var(--spacing-sm);
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        position: relative;
+        z-index: 1;
+    }
+
+    .section-content h2 {
+        font-size: 24px;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .section-content p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    /* Reset alternating layouts */
+    .project-section:nth-child(even) .section-image,
+    .project-section:nth-child(odd) .section-image {
+        order: 1;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+    }
+
+    .project-section:nth-child(even) .section-content,
+    .project-section:nth-child(odd) .section-content {
+        order: 2;
+        margin-left: var(--spacing-sm);
+        margin-right: var(--spacing-sm);
+    }
+}
+
+/* Header & Navigation */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px var(--spacing-xl);
+    width: calc(100% - 120px);
+}
+
+nav {
+    display: flex;
+    gap: 40px;
+    margin-left: auto;  /* Push nav items to the right */
+    padding-left: var(--spacing-xl);  /* Add space between name and nav */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    /* Header adjustments */
+    header {
+        padding: 10px var(--spacing-md);
+        width: 100%;
+    }
+
+    nav {
+        gap: 24px;  /* Adjust gap for mobile */
+        padding-left: var(--spacing-lg);  /* Space between name and nav */
+    }
+
+    /* Welcome Section Mobile */
+    .welcome-text h1 {
+        font-size: 32px;  /* Reduced from 48px */
+        line-height: 1.2;
+        white-space: normal;
+    }
+
+    /* About Section Mobile */
+    .about-section h1 {
+        font-size: 28px;  /* Reduced from 36px */
+        line-height: 1.2;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    /* Project Title Mobile */
+    .project-title h1 {
+        font-size: 28px;  /* Reduced from 36px */
+        line-height: 1.2;
+        margin-bottom: var(--spacing-sm);
     }
 }
