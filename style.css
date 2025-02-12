@@ -203,11 +203,10 @@ section.welcome .title {
 /* Project Images */
 .project img {
     width: 100%;
-    height: auto;
-    object-fit: cover;
+    height: 400px;         /* Set fixed height */
+    object-fit: cover;     /* Maintain aspect ratio and cover container */
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: block;
-    aspect-ratio: 16 / 9; /* Maintain consistent image ratios */
 }
 
 /* Hover Effects with Progressive Enhancement */
@@ -281,6 +280,10 @@ section.welcome .title {
 
     .project h2 {
         margin-top: 12px;
+    }
+
+    .project img {
+        height: 300px;     /* Slightly smaller height for mobile */
     }
 }
 
@@ -659,12 +662,16 @@ section.welcome .title {
     margin: var(--spacing-xxl) 0;
 }
 
-.project-section.goals .section-image {
-    grid-column: 2 / span 3;
+.project-section.goals .section-image,
+.project-section.action .section-image,
+.project-section.results .section-image {
+    grid-column: 2 / span 4;  /* Standardized width */
 }
 
-.project-section.goals .section-content {
-    grid-column: 5 / span 4;  
+.project-section.goals .section-content,
+.project-section.action .section-content,
+.project-section.results .section-content {
+    grid-column: 7 / span 4;  /* Standardized position */
 }
 
 /* Action Section */
@@ -793,6 +800,46 @@ section.welcome .title {
 /* Mobile Styles */
 @media (max-width: 768px) {
     .project-page {
+        padding: 0;
+    }
+
+    .project-header {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-md);
+        margin: 0;
+    }
+
+    /* Move hero image to top */
+    .hero-image {
+        order: -1;  /* Places image before all other elements */
+        margin: 0;
+        width: 100%;
+    }
+
+    .hero-image img {
+        border-radius: 0;
+        width: 100%;
+        height: auto;
+    }
+
+    /* Project title styling */
+    .project-title {
+        padding: 0 var(--spacing-sm);
+        margin-top: var(--spacing-md);
+    }
+
+    .project-title h1 {
+        font-size: 36px;
+        line-height: 1.2;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .project-intro {
+        margin-bottom: var(--spacing-md);
+    }
+
+    .project-page {
         padding: 0 var(--spacing-sm);
     }
 
@@ -852,158 +899,29 @@ section.welcome .title {
     .section-content p {
         font-size: 16px;
     }
-}
 
-/* Transitions */
-.project-header,
-.project-section {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s ease forwards;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* -----------------------------
-7. Media Queries
------------------------------ */
-@media (max-width: 768px) {
-    header {
-        padding: var(--spacing-sm);
-        width: 100%;
-        flex-direction: row;     /* Changed from column to row */
-        justify-content: space-between;
-        align-items: center;     /* Changed from flex-start to center */
-    }
-
-    nav {
-        flex-direction: row;     /* Changed from column to row */
-        align-items: center;     /* Changed from flex-end to center */
-        gap: var(--spacing-sm);  /* Reduced gap for mobile */
-    }
-
-    section.welcome {
-        margin: var(--spacing-md);  /* Reduced margin */
-    }
-
-    section.welcome .welcome-text {
-        display: flex;
-        flex-direction: column;  /* Changed from row to column */
-        align-items: flex-start; /* Align text to the left */
-        gap: var(--spacing-xs);  /* Add small gap between lines */
-    }
-
-    section.welcome h1 {
-        font-size: 48px;        /* Smaller font size for better mobile fit */
-        white-space: nowrap;    /* Keep each line as one unit */
-        line-height: 1.1;       /* Slightly increased line height */
+    .project-section.goals .section-image,
+    .project-section.action .section-image,
+    .project-section.results .section-image {
+        width: 90%;  /* Standardized width on mobile */
         margin: 0;
     }
 
-    /* Specific styling for "Hi!" */
-    section.welcome h1:first-child {
-        margin-bottom: var(--spacing-xs);
+    .project-section.goals .section-content,
+    .project-section.action .section-content,
+    .project-section.results .section-content {
+        width: 90%;
+        margin-top: -60px;
+        margin-left: 10%;  /* Standardized offset */
     }
 
-    .projects {
-        grid-template-columns: 1fr;
-        margin: var(--spacing-md);
-    }
-
-    .project {
-        grid-column: 1 / -1 !important;
-        margin-top: var(--spacing-md) !important;
-    }
-
-    .about-me {
-        grid-template-columns: 1fr;
-        margin: var(--spacing-md);
-        gap: var(--spacing-sm);
-    }
-
-    .about-image,
-    .about-text {
-        grid-column: 1 / -1;
-    }
-
-    .about-text {
-        margin-top: var(--spacing-sm);
-    }
-
-    .project-page {
-        margin: 0 var(--spacing-sm);
-    }
-
-    .project-header,
-    .project-section {
-        grid-template-columns: 1fr;
-    }
-
-    .project-title,
-    .hero-image,
-    .section-content,
-    .section-image {
-        grid-column: 1 / -1 !important;
-    }
-
-    .project-title h1 {
-        font-size: 32px;
-        margin-bottom: var(--spacing-sm);
-    }
-
-    .section-content h2 {
-        font-size: 24px;
-        margin-bottom: var(--spacing-sm);
-    }
-
-    .project-header {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: var (--spacing-sm);
-        margin: var (--spacing-md) 0;
-    }
-
-    .project-title {
-        grid-row: 1;  /* Ensure title is always first */
-        margin-bottom: var (--spacing-sm);
-    }
-
-    .hero-image {
-        grid-row: 2;  /* Hero image follows immediately after title */
-        margin: var (--spacing-sm) 0;
-    }
-
-    .project-section {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: var (--spacing-md);
-        margin: var (--spacing-lg) 0;
-    }
-
-    .project-section .section-image {
-        grid-row: 1;  /* Image first */
-        margin-bottom: var (--spacing-sm);
-    }
-
-    .project-section .section-content {
-        grid-row: 2;  /* Content second */
-    }
-
+    /* Alternating Layout */
     .project-section:nth-child(even) .section-image {
-        grid-row: 2;
+        margin-left: 10%;
     }
 
     .project-section:nth-child(even) .section-content {
-        grid-row: 1;
+        margin-left: 0;
     }
 
     nav {
