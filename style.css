@@ -611,14 +611,19 @@ section.welcome .title {
         display: flex;
         flex-direction: column;  /* Changed from row to column */
         align-items: flex-start; /* Align text to the left */
-        gap: 0;                 /* Remove gap between lines */
+        gap: var(--spacing-xs);  /* Add small gap between lines */
     }
 
     section.welcome h1 {
-        font-size: 64px;        /* Reduced from 96px to 64px */
-        white-space: normal;    /* Allow text to wrap naturally */
-        line-height: 1;         /* Tighter line height */
+        font-size: 48px;        /* Smaller font size for better mobile fit */
+        white-space: nowrap;    /* Keep each line as one unit */
+        line-height: 1.1;       /* Slightly increased line height */
         margin: 0;
+    }
+
+    /* Specific styling for "Hi!" */
+    section.welcome h1:first-child {
+        margin-bottom: var(--spacing-xs);
     }
 
     .projects {
