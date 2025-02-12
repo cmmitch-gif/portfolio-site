@@ -665,12 +665,15 @@ section.welcome .title {
 }
 
 .hero-image {
-    grid-column: 7 / span 6;
+    grid-column: 6 / -1;
+    width: 100%;
 }
 
 .hero-image img {
     width: 100%;
-    height: auto;
+    height: 600px;            /* Fixed height for hero images */
+    object-fit: cover;        /* Maintain aspect ratio */
+    border-radius: 16px;
 }
 
 /* Project Sections */
@@ -716,9 +719,15 @@ section.welcome .title {
     margin-bottom: var(--spacing-md);
 }
 
+.section-image {
+    grid-column: 2 / span 5;
+}
+
 .section-image img {
     width: 100%;
-    height: auto;
+    height: 400px;            /* Fixed height for section images */
+    object-fit: cover;        /* Maintain aspect ratio */
+    border-radius: 16px;
 }
 
 /* Project Page Layout */
@@ -837,9 +846,23 @@ section.welcome .title {
     }
 
     .hero-image img {
+        height: 400px;        /* Reduced height for mobile */
         border-radius: 0;
-        width: 100%;
-        height: auto;
+    }
+
+    .section-image img {
+        height: 300px;        /* Reduced height for mobile */
+        border-radius: 0;
+    }
+
+    /* Project Section Layout */
+    .project-section .section-image {
+        width: 90%;
+        margin: 0;
+    }
+
+    .project-section:nth-child(even) .section-image {
+        margin-left: 10%;
     }
 
     /* Project title styling */
@@ -1143,4 +1166,4 @@ section.welcome .title {
 
 .music-slideshow .slide img {
     height: 224px;        /* Reduced by 30% from original 320px */
-}
+}/* Welcome Section Base Styles */section.welcome {    margin: var(--spacing-xl);    text-align: left;}.welcome-text h1 {    font-size: 208px;    letter-spacing: -1.1%;    line-height: 0.9;    margin: 0;    font-weight: 600;    white-space: nowrap;}/* Mobile Styles */@media (max-width: 768px) {    /* Welcome Section Mobile */    section.welcome {        margin: var(--spacing-md);    }    .welcome-text h1 {        font-size: 48px;  /* Reduced from 208px */        line-height: 1.1;        white-space: normal;    }    /* Projects Grid Mobile Fix */    .projects {        display: grid;        grid-template-columns: 1fr;        gap: var(--spacing-md);        padding: var(--spacing-sm);        margin: 0;    }    /* Reset all project grid positions for mobile */    .project.sam-kerr,    .project.klaviyo,    .project.nbl,    .project.ultra-mag,    .project.paramount,    .project.minnows,    .project.adidas,    .project.social {        grid-column: 1 / -1;        grid-row: auto;    }    /* About Section Mobile */    .about-section h1 {        font-size: 36px;  /* Reduced size for mobile */        line-height: 1.2;        margin-bottom: var(--spacing-sm);    }}/* Tablet Styles */@media (min-width: 769px) and (max-width: 1024px) {    .welcome-text h1 {        font-size: 120px;  /* Medium size for tablets */    }}

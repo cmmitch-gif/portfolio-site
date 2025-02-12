@@ -12,55 +12,72 @@ function initSlideshow(slideshowContainer) {
     dots[0].classList.add('active');
 
     function updateSlides(index) {
+        currentIndex = index; // Update current index
         slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+        
+        // Update dots
         dots.forEach((dot, i) => {
             dot.classList.toggle('active', i === index);
         });
     }
 
     function nextSlide() {
-        currentIndex = (currentIndex + 1) % slides.length;
-        updateSlides(currentIndex);
+        let nextIndex = (currentIndex + 1) % slides.length;
+        updateSlides(nextIndex);
     }
 
     function prevSlide() {
-        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-        updateSlides(currentIndex);
+        let prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateSlides(prevIndex);
     }
 
     // Touch Event Handlers
-    slidesContainer.addEventListener('touchstart', (e) => {
+    function handleTouchStart(e) {
         touchStartX = e.touches[0].clientX;
-    }, { passive: true });
+    }
 
-    slidesContainer.addEventListener('touchmove', (e) => {
+    function handleTouchMove(e) {
         touchEndX = e.touches[0].clientX;
-    }, { passive: true });
+    }
 
-    slidesContainer.addEventListener('touchend', () => {
-        const swipeThreshold = 50; // minimum distance for swipe
+    function handleTouchEnd() {
+        const swipeThreshold = 50;
         const diff = touchStartX - touchEndX;
 
         if (Math.abs(diff) > swipeThreshold) {
             if (diff > 0) {
-                nextSlide(); // Swipe left
+                nextSlide();
             } else {
-                prevSlide(); // Swipe right
+                prevSlide();
             }
         }
-    });
+        
+        // Reset touch coordinates
+        touchStartX = 0;
+        touchEndX = 0;
+    }
 
-    // Existing Event Listeners
+    // Event Listeners
+    slidesContainer.addEventListener('touchstart', handleTouchStart, { passive: true });
+    slidesContainer.addEventListener('touchmove', handleTouchMove, { passive: true });
+    slidesContainer.addEventListener('touchend', handleTouchEnd);
+
     nextButton.addEventListener('click', nextSlide);
     prevButton.addEventListener('click', prevSlide);
+
     dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            currentIndex = index;
-            updateSlides(currentIndex);
-        });
+        dot.addEventListener('click', () => updateSlides(index));
     });
+
+    // Cleanup function to remove event listeners
+    return function cleanup() {
+        slidesContainer.removeEventListener('touchstart', handleTouchStart);
+        slidesContainer.removeEventListener('touchmove', handleTouchMove);
+        slidesContainer.removeEventListener('touchend', handleTouchEnd);
+    };
 }
 
+// Initialize all slideshows when the page loads
 document.addEventListener('DOMContentLoaded', () => {
     const slideshows = document.querySelectorAll('.slideshow');
     slideshows.forEach(slideshow => initSlideshow(slideshow));
