@@ -80,6 +80,14 @@ class Slideshow {
     }
 }
 
+// Add this to your existing slide functionality
+function updateDots(slideshow, currentIndex) {
+    const dots = slideshow.querySelectorAll('.nav-dot');
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIndex);
+    });
+}
+
 // Initialize all slideshows when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     const slideshows = document.querySelectorAll('.slideshow');

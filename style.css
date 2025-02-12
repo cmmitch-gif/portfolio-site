@@ -371,15 +371,12 @@ section.welcome .title {
 
 /* Slideshow Container */
 .slideshow-container {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 2rem;
-    padding: 0 2rem;
-    align-items: start; /* Aligns text to the top */
-    margin-top: 124px;
-    max-width: 1440px;
-    margin-left: auto;
-    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    margin: var(--spacing-xl) auto;
+    max-width: 1200px;
+    padding: 0 var(--spacing-md);
 }
 
 /* Individual Slideshow Positioning */
@@ -405,55 +402,62 @@ section.welcome .title {
 /* Slideshow Components */
 .slideshow {
     position: relative;
-    overflow: hidden;
-    border-radius: 8px;
     background: var(--color-background);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .slide {
-    display: none;
-    opacity: 0;
-    transition: opacity var(--transition-speed) ease-in-out;
-    will-change: opacity;
-}
-
-.slide.active {
-    display: block;
-    opacity: 1;
+    min-width: 100%;
+    padding: var(--spacing-md);
 }
 
 .slide img {
     width: 100%;
-    height: auto;
+    height: 500px;
     object-fit: cover;
-    align-self: end; /* Aligns images to the bottom */
+    border-radius: 12px;
 }
 
 .slide-description {
-    align-self: start; /* Aligns text to the top */
+    margin-top: var(--spacing-sm);
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--color-text);
+    text-align: center;
 }
-/* Navigation */
+
 .slideshow-navigation {
+    position: absolute;
+    bottom: var(--spacing-md);
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    justify-content: center;
-    margin-top: 1rem;
-    align-self: end; /* Aligns dots at the same level */
+    gap: var(--spacing-xs);
+    z-index: 2;
 }
 
 .nav-dot {
-    width: 12px;
-    height: 12px;
-    background: #333;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
-    margin: 0 0.5rem;
-    opacity: 0.5;
-    transition: opacity 0.3s;
+    border: none;
+    background: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .nav-dot.active {
-    opacity: 1;
+    background: var(--color-primary);
+    transform: scale(1.2);
 }
-/* Arrows */
+
 .slideshow-arrows {
     position: absolute;
     top: 50%;
@@ -463,22 +467,29 @@ section.welcome .title {
     display: flex;
     justify-content: space-between;
     padding: 0 var(--spacing-sm);
-    pointer-events: none;
+    z-index: 2;
 }
 
 .prev-arrow,
 .next-arrow {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.9);
     border: none;
     border-radius: 50%;
     width: 40px;
     height: 40px;
+    font-size: 20px;
     cursor: pointer;
-    pointer-events: auto;
-    transition: background-color var(--transition-speed) ease;
     display: flex;
     align-items: center;
     justify-content: center;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+}
+
+.prev-arrow:hover,
+.next-arrow:hover {
+    background: #fff;
+    transform: scale(1.1);
 }
 
 /* Accessibility */
@@ -509,6 +520,17 @@ section.welcome .title {
     .books-slideshow,
     .music-slideshow {
         grid-column: 1 / -1;
+    }
+
+    .slide img {
+        height: 300px;
+    }
+    
+    .prev-arrow,
+    .next-arrow {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
     }
 }
 /* Print Styles */
