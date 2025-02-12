@@ -52,6 +52,7 @@ html {
 /* -----------------------------
 2. Header & Navigation
 ----------------------------- */
+/* Base header styles */
 header {
     display: flex;
     justify-content: space-between;
@@ -1166,4 +1167,18 @@ section.welcome .title {
 
 .music-slideshow .slide img {
     height: 224px;        /* Reduced by 30% from original 320px */
-}/* Welcome Section Base Styles */section.welcome {    margin: var(--spacing-xl);    text-align: left;}.welcome-text h1 {    font-size: 208px;    letter-spacing: -1.1%;    line-height: 0.9;    margin: 0;    font-weight: 600;    white-space: nowrap;}/* Mobile Styles */@media (max-width: 768px) {    /* Welcome Section Mobile */    section.welcome {        margin: var(--spacing-md);    }    .welcome-text h1 {        font-size: 48px;  /* Reduced from 208px */        line-height: 1.1;        white-space: normal;    }    /* Projects Grid Mobile Fix */    .projects {        display: grid;        grid-template-columns: 1fr;        gap: var(--spacing-md);        padding: var(--spacing-sm);        margin: 0;    }    /* Reset all project grid positions for mobile */    .project.sam-kerr,    .project.klaviyo,    .project.nbl,    .project.ultra-mag,    .project.paramount,    .project.minnows,    .project.adidas,    .project.social {        grid-column: 1 / -1;        grid-row: auto;    }    /* About Section Mobile */    .about-section h1 {        font-size: 36px;  /* Reduced size for mobile */        line-height: 1.2;        margin-bottom: var(--spacing-sm);    }}/* Tablet Styles */@media (min-width: 769px) and (max-width: 1024px) {    .welcome-text h1 {        font-size: 120px;  /* Medium size for tablets */    }}
+}/* Welcome Section Base Styles */section.welcome {    margin: var(--spacing-xl);    text-align: left;}.welcome-text h1 {    font-size: 208px;    letter-spacing: -1.1%;    line-height: 0.9;    margin: 0;    font-weight: 600;    white-space: nowrap;}/* Mobile Styles */@media (max-width: 768px) {    /* Welcome Section Mobile */    section.welcome {        margin: var(--spacing-md);    }    .welcome-text h1 {        font-size: 48px;  /* Reduced from 208px */        line-height: 1.1;        white-space: normal;    }    /* Projects Grid Mobile Fix */    .projects {        display: grid;        grid-template-columns: 1fr;        gap: var(--spacing-md);        padding: var(--spacing-sm);        margin: 0;    }    /* Reset all project grid positions for mobile */    .project.sam-kerr,    .project.klaviyo,    .project.nbl,    .project.ultra-mag,    .project.paramount,    .project.minnows,    .project.adidas,    .project.social {        grid-column: 1 / -1;        grid-row: auto;    }    /* About Section Mobile */    .about-section h1 {        font-size: 36px;  /* Reduced size for mobile */        line-height: 1.2;        margin-bottom: var(--spacing-sm);    }}/* Tablet Styles */@media (min-width: 769px) and (max-width: 1024px) {    .welcome-text h1 {        font-size: 120px;  /* Medium size for tablets */    }}/* Mobile styles */
+@media (max-width: 768px) {
+    header {
+        padding: 10px var(--spacing-md);
+        width: 100%;
+    }
+
+    nav {
+        gap: 40px;  /* Restored original gap */
+    }
+
+    .mitchell-name {
+        white-space: nowrap;  /* Prevent name from wrapping */
+    }
+}
