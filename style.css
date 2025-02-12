@@ -668,6 +668,20 @@ section.welcome .title {
     .project-title h1 {
         font-size: 36px;
     }
+
+    nav {
+        display: flex;
+        flex-direction: row;     /* Ensure row direction */
+        align-items: center;
+        gap: 12px;              /* Smaller gap for mobile */
+        flex-wrap: nowrap;       /* Prevent wrapping */
+        width: auto;            /* Remove full width */
+    }
+
+    nav a {
+        font-size: 14px;        /* Slightly smaller font for mobile */
+        white-space: nowrap;    /* Prevent text wrapping */
+    }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
