@@ -592,24 +592,15 @@ section.welcome .title {
     header {
         padding: var(--spacing-sm);
         width: 100%;
-        flex-direction: column;
-        align-items: flex-start;  /* Added */
+        flex-direction: row;     /* Changed from column to row */
+        justify-content: space-between;
+        align-items: center;     /* Changed from flex-start to center */
     }
 
     nav {
-        flex-direction: column;   /* Added */
-        align-items: flex-end;    /* Added */
-        width: 100%;             /* Added */
-        gap: var(--spacing-sm);
-    }
-
-    .mitchell-name {
-        align-self: flex-start;   /* Added */
-        margin-bottom: var(--spacing-sm);  /* Added */
-    }
-
-    nav a {
-        margin: 5px 0;           /* Added */
+        flex-direction: row;     /* Changed from column to row */
+        align-items: center;     /* Changed from flex-end to center */
+        gap: var(--spacing-sm);  /* Reduced gap for mobile */
     }
 
     section.welcome h1 {
