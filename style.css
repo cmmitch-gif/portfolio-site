@@ -477,13 +477,14 @@ section.welcome .title {
 }
 
 .nav-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
+    width: 6px;           /* Made smaller and equal to height */
+    height: 6px;          /* Made smaller and equal to width */
+    border-radius: 50%;   /* This was already correct for circles */
     border: none;
     background: rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: all 0.3s ease;
+    margin: 0 4px;        /* Added spacing between dots */
 }
 
 .nav-dot.active {
