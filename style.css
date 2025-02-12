@@ -415,14 +415,36 @@ section.welcome .title {
 
 .slide {
     min-width: 100%;
-    padding: var(--spacing-md);
+    padding: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .slide img {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
+    width: auto;
+    height: 400px;
+    object-fit: contain;
     border-radius: 12px;
+}
+
+.slide-description {
+    margin-top: var(--spacing-md);
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--color-text);
+    text-align: center;
+    max-width: 600px;
+}
+
+@media (max-width: 768px) {
+    .slide {
+        padding: var(--spacing-md);
+    }
+
+    .slide img {
+        height: 250px;
+    }
 }
 
 .slide-description {
