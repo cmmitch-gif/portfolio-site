@@ -642,7 +642,7 @@ section.welcome .title {
     }
 
     .project-page {
-        margin: 0 var(--spacing-md);
+        margin: 0 var(--spacing-sm);
     }
 
     .project-header,
@@ -658,7 +658,54 @@ section.welcome .title {
     }
 
     .project-title h1 {
-        font-size: 36px;
+        font-size: 32px;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .section-content h2 {
+        font-size: 24px;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .project-header {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+        margin: var(--spacing-md) 0;
+    }
+
+    .project-title {
+        grid-row: 1;  /* Ensure title is always first */
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .hero-image {
+        grid-row: 2;  /* Hero image follows immediately after title */
+        margin: var(--spacing-sm) 0;
+    }
+
+    .project-section {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+        margin: var(--spacing-lg) 0;
+    }
+
+    .project-section .section-image {
+        grid-row: 1;  /* Image first */
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .project-section .section-content {
+        grid-row: 2;  /* Content second */
+    }
+
+    .project-section:nth-child(even) .section-image {
+        grid-row: 2;
+    }
+
+    .project-section:nth-child(even) .section-content {
+        grid-row: 1;
     }
 
     nav {
