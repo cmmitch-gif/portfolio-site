@@ -766,53 +766,85 @@ section.welcome .title {
     /* Project Header */
     .project-header {
         display: grid;
-        grid-template-columns: 1fr;
-        gap: var(--spacing-md);
-        margin: var(--spacing-lg) 0;
+        grid-template-columns: repeat(6, 1fr);
+        gap: var(--spacing-sm);
+        margin: var(--spacing-md) 0;
+    }
+
+    .project-title {
+        grid-column: 1 / span 6;
+        grid-row: 1;
+    }
+
+    .hero-image {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        margin: var(--spacing-sm) 0;
     }
 
     /* Project Sections */
     .project-section {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(6, 1fr);
         gap: var(--spacing-md);
-        margin: var(--spacing-xl) 0;
+        margin: var(--spacing-lg) 0;
     }
 
     /* Goals Section */
+    .project-section.goals {
+        margin-top: var(--spacing-xl);
+    }
+
     .project-section.goals .section-image {
-        grid-column: 1 / span 3;
+        grid-column: 1 / span 4;
         grid-row: 1;
     }
 
     .project-section.goals .section-content {
-        grid-column: 2 / span 3;
+        grid-column: 2 / span 5;
         grid-row: 2;
+        margin-top: -60px;
     }
 
     /* Action Section */
     .project-section.action .section-image {
-        grid-column: 2 / span 3;
+        grid-column: 3 / span 4;
         grid-row: 1;
     }
 
     .project-section.action .section-content {
-        grid-column: 1 / span 3;
+        grid-column: 1 / span 5;
         grid-row: 2;
+        margin-top: -60px;
     }
 
     /* Results Section */
     .project-section.results .section-image {
-        grid-column: 1 / span 3;
+        grid-column: 1 / span 4;
         grid-row: 1;
     }
 
     .project-section.results .section-content {
-        grid-column: 2 / span 3;
+        grid-column: 2 / span 5;
         grid-row: 2;
+        margin-top: -60px;
     }
 
-    /* Typography adjustments */
+    /* Content Styles */
+    .section-content {
+        background-color: var(--color-background);
+        padding: var(--spacing-sm);
+        z-index: 1;
+    }
+
+    /* Image Styles */
+    .section-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Typography */
     .project-title h1 {
         font-size: 32px;
         margin-bottom: var(--spacing-sm);
@@ -820,13 +852,6 @@ section.welcome .title {
 
     .section-content h2 {
         font-size: 24px;
-        margin-bottom: var(--spacing-sm);
-    }
-
-    /* Image adjustments */
-    .section-image img {
-        width: 100%;
-        height: auto;
         margin-bottom: var(--spacing-sm);
     }
 }
