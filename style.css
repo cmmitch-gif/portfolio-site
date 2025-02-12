@@ -315,11 +315,11 @@ section.welcome .title {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: var(--spacing-md);
-    margin: 112px var(--spacing-xl) 124px var(--spacing-xl);
+    margin: var(--spacing-xl);
 }
 
 .about-image {
-    grid-column: 1 / span 4;
+    grid-column: 2 / span 4;  /* Changed from 1 to 2 to align with text */
 }
 
 .about-image img {
@@ -329,8 +329,9 @@ section.welcome .title {
 }
 
 .about-text {
-    grid-column: 6 / span 4;
-    align-self: center;
+    grid-column: 2 / span 4;  /* Changed to align with image */
+    align-self: start;        /* Align with top of image */
+    margin-top: var(--spacing-md);
 }
 
 /* About Welcome Section */
@@ -477,14 +478,16 @@ section.welcome .title {
 }
 
 .nav-dot {
-    width: 6px;           /* Made smaller and equal to height */
-    height: 6px;          /* Made smaller and equal to width */
-    border-radius: 50%;   /* This was already correct for circles */
+    width: 8px;           /* Equal width and height for perfect circles */
+    height: 8px;
+    border-radius: 50%;
     border: none;
     background: rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: all 0.3s ease;
-    margin: 0 4px;        /* Added spacing between dots */
+
+    padding: 0;           /* Remove any padding that might cause oval shape */
+    margin: 0 4px;
 }
 
 .nav-dot.active {
@@ -565,6 +568,10 @@ section.welcome .title {
         width: 32px;
         height: 32px;
         font-size: 16px;
+    }
+
+    .music-slideshow .slide img {
+        height: 154px;    /* Reduced by 30% from mobile 220px */
     }
 }
 /* Print Styles */
@@ -717,11 +724,16 @@ section.welcome .title {
     .about-me {
         grid-template-columns: 1fr;
         margin: var(--spacing-md);
+        gap: var(--spacing-sm);
     }
 
     .about-image,
     .about-text {
         grid-column: 1 / -1;
+    }
+
+    .about-text {
+        margin-top: var(--spacing-sm);
     }
 
     .project-page {
@@ -896,4 +908,8 @@ section.welcome .title {
     .projects {
         grid-template-columns: repeat(6, 1fr);
     }
+}
+
+.music-slideshow .slide img {
+    height: 224px;        /* Reduced by 30% from original 320px */
 }
