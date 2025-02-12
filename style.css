@@ -350,11 +350,9 @@ section.welcome .title {
 /* Layout */
 .about-section {
     display: grid;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-columns: repeat(12, 1fr);
     gap: var(--spacing-md);
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: var(--spacing-md);
+    margin: 0 var(--spacing-xl);
 }
 
 .about-image {
@@ -366,8 +364,8 @@ section.welcome .title {
 }
 
 .about-text {
-    grid-column: 5 / span 4;
-    align-self: center;
+    grid-column: 1 / span 4;
+    margin-top: var(--spacing-md);
 }
 
 /* Slideshow Container */
@@ -478,16 +476,17 @@ section.welcome .title {
 }
 
 .nav-dot {
-    width: 8px;           /* Equal width and height for perfect circles */
-    height: 8px;
-    border-radius: 50%;
+    width: 6px;           /* Equal dimensions for perfect circle */
+    height: 6px;
+    min-width: 6px;      /* Prevent oval shape on mobile */
+    min-height: 6px;     /* Prevent oval shape on mobile */
+    padding: 0;
+    margin: 0 4px;
     border: none;
+    border-radius: 50%;
     background: rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: all 0.3s ease;
-
-    padding: 0;           /* Remove any padding that might cause oval shape */
-    margin: 0 4px;
 }
 
 .nav-dot.active {
@@ -572,6 +571,28 @@ section.welcome .title {
 
     .music-slideshow .slide img {
         height: 154px;    /* Reduced by 30% from mobile 220px */
+    }
+
+    .about-section {
+        grid-template-columns: 1fr;
+        margin: 0 var(--spacing-md);
+        gap: var(--spacing-sm);
+    }
+
+    .about-image,
+    .about-text {
+        grid-column: 1 / -1;
+    }
+
+    .about-text {
+        margin-top: var(--spacing-sm);
+    }
+
+    .nav-dot {
+        width: 6px;       /* Maintain circle shape on mobile */
+        height: 6px;
+        min-width: 6px;
+        min-height: 6px;
     }
 }
 /* Print Styles */
@@ -765,30 +786,30 @@ section.welcome .title {
     .project-header {
         display: grid;
         grid-template-columns: 1fr;
-        gap: var(--spacing-sm);
-        margin: var(--spacing-md) 0;
+        gap: var (--spacing-sm);
+        margin: var (--spacing-md) 0;
     }
 
     .project-title {
         grid-row: 1;  /* Ensure title is always first */
-        margin-bottom: var(--spacing-sm);
+        margin-bottom: var (--spacing-sm);
     }
 
     .hero-image {
         grid-row: 2;  /* Hero image follows immediately after title */
-        margin: var(--spacing-sm) 0;
+        margin: var (--spacing-sm) 0;
     }
 
     .project-section {
         display: grid;
         grid-template-columns: 1fr;
-        gap: var(--spacing-md);
-        margin: var(--spacing-lg) 0;
+        gap: var (--spacing-md);
+        margin: var (--spacing-lg) 0;
     }
 
     .project-section .section-image {
         grid-row: 1;  /* Image first */
-        margin-bottom: var(--spacing-sm);
+        margin-bottom: var (--spacing-sm);
     }
 
     .project-section .section-content {
@@ -897,6 +918,97 @@ section.welcome .title {
         width: 100%;
         height: auto;
         display: block;
+    }
+
+    /* Project Page Container */
+    .project-page {
+        margin: 0;
+        padding: var(--spacing-sm);
+    }
+
+    /* Project Header */
+    .project-header {
+        margin: var(--spacing-lg) 0;
+        gap: var(--spacing-md);
+    }
+
+    .project-title h1 {
+        font-size: 36px;
+        line-height: 1.2;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .project-title .brand {
+        display: inline-block;
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .project-intro {
+        font-size: 18px;
+        line-height: 1.5;
+        color: rgba(21, 21, 21, 0.8);
+    }
+
+    /* Hero Image */
+    .hero-image {
+        margin: 0 calc(var(--spacing-sm) * -1);
+        width: calc(100% + var(--spacing-sm) * 2);
+    }
+
+    .hero-image img {
+        border-radius: 12px;
+    }
+
+    /* Project Sections */
+    .project-section {
+        margin: var(--spacing-xl) 0;
+        position: relative;
+    }
+
+    /* Image and Content Layout */
+    .project-section .section-image {
+        width: 90%;
+        margin: 0;
+    }
+
+    .project-section .section-content {
+        width: 90%;
+        margin-top: -60px;
+        padding: var(--spacing-md);
+        border-radius: 12px;
+        background: var(--color-background);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        z-index: 1;
+    }
+
+    /* Alternating Layout */
+    .project-section:nth-child(odd) .section-image {
+        margin-left: 0;
+    }
+
+    .project-section:nth-child(odd) .section-content {
+        margin-left: 10%;
+    }
+
+    .project-section:nth-child(even) .section-image {
+        margin-left: 10%;
+    }
+
+    .project-section:nth-child(even) .section-content {
+        margin-left: 0;
+    }
+
+    /* Section Typography */
+    .section-content h2 {
+        font-size: 24px;
+        margin-bottom: var(--spacing-sm);
+        color: var(--color-text);
+    }
+
+    .section-content p {
+        font-size: 16px;
+        line-height: 1.6;
+        color: rgba(21, 21, 21, 0.8);
     }
 }
 
