@@ -593,11 +593,23 @@ section.welcome .title {
         padding: var(--spacing-sm);
         width: 100%;
         flex-direction: column;
-        gap: var(--spacing-sm);
+        align-items: flex-start;  /* Added */
     }
 
     nav {
+        flex-direction: column;   /* Added */
+        align-items: flex-end;    /* Added */
+        width: 100%;             /* Added */
         gap: var(--spacing-sm);
+    }
+
+    .mitchell-name {
+        align-self: flex-start;   /* Added */
+        margin-bottom: var(--spacing-sm);  /* Added */
+    }
+
+    nav a {
+        margin: 5px 0;           /* Added */
     }
 
     section.welcome h1 {
