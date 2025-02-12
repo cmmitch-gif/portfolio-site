@@ -603,6 +603,24 @@ section.welcome .title {
         gap: var(--spacing-sm);  /* Reduced gap for mobile */
     }
 
+    section.welcome {
+        margin: var(--spacing-md);  /* Reduced margin */
+    }
+
+    section.welcome .welcome-text {
+        display: flex;
+        flex-direction: row;  /* Keep text inline */
+        flex-wrap: nowrap;    /* Prevent wrapping */
+        align-items: baseline;
+        gap: 12px;           /* Space between "Hi!" and "I'm Mitchell" */
+    }
+
+    section.welcome h1 {
+        font-size: 48px;     /* Smaller font size for mobile */
+        white-space: nowrap; /* Prevent text wrapping */
+        margin: 0;          /* Remove default margins */
+    }
+
     section.welcome h1 {
         font-size: 96px;
     }
