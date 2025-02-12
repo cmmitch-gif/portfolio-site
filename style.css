@@ -357,7 +357,7 @@ section.welcome .title {
 .about-section {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    gap: var(--spacing-md);
+    gap: var(--spacing-sm);  /* Reduced from spacing-md */
     margin: 0 var(--spacing-xl);
 }
 
@@ -370,9 +370,8 @@ section.welcome .title {
 }
 
 .about-text {
-    grid-column: 6 / span 4;
-    margin-top: var(--spacing-md);
-    align-self: start;
+    grid-column: 5 / span 4;  /* Changed from 6 to 5 to move closer to image */
+    margin-top: 0;  /* Removed top margin */
 }
 
 /* Mobile adjustments */
@@ -1321,23 +1320,40 @@ nav {
 
     /* Welcome Section Mobile */
     .welcome-text h1 {
-        font-size: 32px;  /* Reduced from 48px */
+        font-size: 32px;           /* Smaller font size */
         line-height: 1.2;
         white-space: normal;
+        margin: 0;
+        overflow: hidden;          /* Prevent text overflow */
+        max-width: 100%;          /* Ensure text stays within container */
+    }
+
+    .greeting {
+        display: block;           /* Stack greeting on its own line */
+        margin-bottom: var(--spacing-xs);
     }
 
     /* About Section Mobile */
     .about-section h1 {
-        font-size: 28px;  /* Reduced from 36px */
+        font-size: 28px;          /* Reduced size */
         line-height: 1.2;
         margin-bottom: var(--spacing-sm);
+        max-width: 100%;
+        overflow: hidden;
     }
 
-    /* Project Title Mobile */
+    /* Project Page Title */
     .project-title h1 {
-        font-size: 28px;  /* Reduced from 36px */
+        font-size: 28px;          /* Reduced size */
         line-height: 1.2;
         margin-bottom: var(--spacing-sm);
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .project-title .brand {
+        display: block;           /* Stack brand name on its own line */
+        margin-bottom: var(--spacing-xs);
     }
 }
 
