@@ -132,6 +132,10 @@ section.welcome .title {
     white-space: nowrap;
 }
 
+.welcome-text .highlight {
+    color: var(--color-primary);
+}
+
 /* -----------------------------
 4. Projects Grid
 ----------------------------- */
