@@ -573,6 +573,12 @@ section.welcome .title {
         height: 154px;    /* Reduced by 30% from mobile 220px */
     }
 
+    /* Add smooth transitions for swipe */
+    .slides {
+        transition: transform 0.3s ease-out;
+        touch-action: pan-y pinch-zoom;
+    }
+
     .about-section {
         grid-template-columns: 1fr;
         margin: 0 var(--spacing-md);
