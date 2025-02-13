@@ -103,16 +103,6 @@ section.welcome {
     text-align: left;
 }
 
-section.welcome h1 {
-    font-size: 208px;
-    letter-spacing: -1.1%;
-    color: var(--color-text);
-    line-height: 0.9;
-    margin: 0;
-    font-weight: 600;
-    height: auto;
-}
-
 section.welcome .title {
     color: var(--color-primary);
 }
@@ -125,7 +115,7 @@ section.welcome .title {
 }
 
 .welcome-text h1 {
-    font-size: clamp(32px, 8vw, 140px);
+    font-size: clamp(80px, 14vw, 208px);
     letter-spacing: -0.02em;
     line-height: 0.9;
     margin: 0;
@@ -144,14 +134,6 @@ section.welcome {
     text-align: left;
 }
 
-.welcome-text h1 {
-    font-size: clamp(32px, 8vw, 140px);
-    letter-spacing: -0.02em;
-    line-height: 0.9;
-    margin: 0;
-    font-weight: 600;
-}
-
 .welcome-text .highlight {
     color: var(--color-primary);
 }
@@ -161,15 +143,6 @@ section.welcome {
     section.welcome {
         margin: var(--spacing-md);
         overflow: hidden;
-    }
-
-    .welcome-text h1 {
-        font-size: 32px;
-        line-height: 1.2;
-        letter-spacing: -0.01em;
-        margin: 0;
-        overflow: hidden;
-        max-width: 100%;
     }
 
     .welcome-text h1 .greeting {
@@ -214,14 +187,6 @@ section.welcome {
     .project.adidas {
         grid-column: 1 / -1;
         grid-row: auto;
-    }
-
-    .welcome-text h1 {
-        font-size: 32px;
-        line-height: 1.2;
-        white-space: normal;
-        letter-spacing: -0.01em;
-        max-width: 100%;
     }
 
     .welcome-text h1 .greeting {
@@ -442,13 +407,6 @@ section.welcome {
 /* About Welcome Section */
 /* Base Styles */
 :root {
-    --spacing-sm: 1rem;
-    --spacing-md: 2rem;
-    --spacing-lg: 124px;
-    --color-primary: #2d00f7;
-    --color-text: #333;
-    --color-background: #fff;
-    --color-dot: #D9D9D9;
     --transition-speed: 0.3s;
 }
 
@@ -1081,12 +1039,6 @@ section.welcome {
         white-space: nowrap;    /* Prevent text wrapping */
     }
 
-    .welcome-text h1 {
-        font-size: 40px;  /* More reasonable size for mobile */
-        line-height: 1.2;
-        white-space: normal;
-        letter-spacing: -0.01em;
-    }
 
     .welcome-text .highlight {
         display: inline;  /* Keep name on same line */
@@ -1263,9 +1215,6 @@ section.welcome {
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-    section.welcome h1 {
-        font-size: 160px;
-    }
 
     .projects {
         grid-template-columns: repeat(6, 1fr);
@@ -1282,13 +1231,6 @@ section.welcome {
     text-align: left;
 }
 
-.welcome-text h1 {
-    font-size: clamp(32px, 8vw, 140px);
-    letter-spacing: -0.02em;
-    line-height: 0.9;
-    margin: 0;
-    font-weight: 600;
-}
 
 /* Mobile Styles */
 @media (max-width: 768px) {
@@ -1296,12 +1238,7 @@ section.welcome {
         margin: var(--spacing-lg) var(--spacing-md);
     }
 
-    .welcome-text h1 {
-        font-size: 40px;  /* More reasonable size for mobile */
-        line-height: 1.2;
-        white-space: normal;
-        letter-spacing: -0.01em;
-    }
+    
 
     .welcome-text .highlight {
         display: inline;  /* Keep name on same line */
@@ -1315,9 +1252,7 @@ section.welcome {
 
 /* Tablet Styles */
 @media (min-width: 769px) and (max-width: 1024px) {
-    .welcome-text h1 {
-        font-size: 90px;  /* Better size for tablets */
-    }
+ 
 }
 /* Mobile styles */
 @media (max-width: 768px) {
@@ -1327,11 +1262,8 @@ section.welcome {
     }
 
     nav {
-        gap: 40px;  /* Restored original gap */
-    }
-
-    .mitchell-name {
-        white-space: nowrap;  /* Prevent name from wrapping */
+        gap: 24px;
+        padding-left: var(--spacing-lg);
     }
 }
 
@@ -1469,29 +1401,14 @@ nav {
         padding-left: var(--spacing-lg);  /* Space between name and nav */
     }
 
-    /* Welcome Section Mobile */
-    .welcome-text h1 {
-        font-size: 32px;           /* Smaller font size */
-        line-height: 1.2;
-        white-space: normal;
-        margin: 0;
-        overflow: hidden;          /* Prevent text overflow */
-        max-width: 100%;          /* Ensure text stays within container */
-    }
+
 
     .greeting {
         display: block;           /* Stack greeting on its own line */
         margin-bottom: var(--spacing-xs);
     }
 
-    /* About Section Mobile */
-    .about-section h1 {
-        font-size: 28px;          /* Reduced size */
-        line-height: 1.2;
-        margin-bottom: var(--spacing-sm);
-        max-width: 100%;
-        overflow: hidden;
-    }
+
 
     /* Project Page Title */
     .project-title h1 {
@@ -1515,11 +1432,6 @@ nav {
         margin: var(--spacing-md);
     }
 
-    .welcome-text h1 {
-        font-size: 36px;  /* Adjusted for better readability */
-        line-height: 1.2;
-        white-space: normal;
-    }
 
     /* Projects Grid Mobile Fix */
     .projects {
@@ -1561,31 +1473,7 @@ nav {
         font-size: 16px;
     }
 }
-
-/* Base H1 styles */
-.welcome-text h1,
-.about-section h1 {
-    font-size: clamp(32px, 8vw, 140px);
-    letter-spacing: -0.02em;
-    line-height: 0.9;
-    margin: 0;
-    font-weight: 600;
-}
-
-/* Mobile Styles */
-@media (max-width: 768px) {
-    .welcome-text h1,
-    .about-section h1 {
-        font-size: 32px;
-        line-height: 1.2;
-        letter-spacing: -0.01em;
-        margin: 0;
-        overflow: hidden;
-        max-width: 100%;
-        word-wrap: break-word;
-    }
-
-    .welcome-text h1 .greeting {
+  .welcome-text h1 .greeting {
         display: block;
         margin-bottom: 4px;
     }
@@ -1599,4 +1487,3 @@ nav {
         margin: var(--spacing-md);
         overflow: hidden;
     }
-}
