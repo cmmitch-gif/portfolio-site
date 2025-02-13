@@ -1506,3 +1506,16 @@ nav {
 
     /* This mobile style is not properly overriding the base style */
 }
+
+.section-title {
+    font-size: clamp(16px, 8vw, 80px);
+    font-weight: 600;
+    margin-bottom: calc(var(--spacing-lg) / 2);  /* Reduced from spacing-lg to half */
+    text-align: center;
+}
+
+.section-title .highlight {
+    color: var(--color-primary);
+}
+
+
