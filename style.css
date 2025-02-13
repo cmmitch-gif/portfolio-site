@@ -403,9 +403,9 @@ section.welcome {
 }
 
 .about-text {
-    grid-column: 2 / span 4;  /* Changed to align with image */
-    align-self: start;        /* Align with top of image */
-    margin-top: var(--spacing-md);
+    grid-column: 7 / span 4;
+    align-self: center;  /* Vertically centers the text */
+    padding-left: calc(var(--spacing-md) / 2);  /* Halved the padding */
 }
 
 .about-text p {
@@ -432,38 +432,35 @@ section.welcome {
 .about-section {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    gap: var(--spacing-sm);  /* Reduced from spacing-md */
+    gap: var(--spacing-xl);
     margin: 0 var(--spacing-xl);
 }
 
 .about-image {
-    grid-column: 1 / span 4;
+    grid-column: 2 / span 4;
     width: 100%;
     height: auto;
     border-radius: 8px;
-    object-fit: cover;
 }
 
 .about-text {
-    grid-column: 5 / span 4;  /* Changed from 6 to 5 to move closer to image */
-    margin-top: 0;  /* Removed top margin */
+    grid-column: 7 / span 4;
+    align-self: center;  /* Vertically centers the text */
+    padding-left: calc(var(--spacing-md) / 2);  /* Halved the padding */
 }
 
-/* Mobile adjustments */
+/* Mobile styles */
 @media (max-width: 768px) {
     .about-section {
         grid-template-columns: 1fr;
         margin: 0 var(--spacing-md);
-        gap: var(--spacing-sm);
+        gap: var(--spacing-md);
     }
 
     .about-image,
     .about-text {
         grid-column: 1 / -1;
-    }
-
-    .about-text {
-        margin-top: var(--spacing-sm);
+        padding-left: 0;  /* Remove padding on mobile */
     }
 }
 
