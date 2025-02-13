@@ -301,6 +301,7 @@ section.welcome {
     margin: 16px 0 0 0;
     font-size: clamp(14px, 1vw, 16px);
     line-height: 1.4;
+    font-weight: 400;  /* Reduced from default weight */
 }
 
 .project a {
@@ -346,7 +347,10 @@ section.welcome {
     }
 
     .project h2 {
-        margin-top: 12px;
+        font-size: 18px;
+        margin-top: var(--spacing-sm);
+        padding: 0 var(--spacing-xs);
+        font-weight: 400;  /* Ensure consistency on mobile */
     }
 
     .project img {
@@ -1454,6 +1458,7 @@ nav {
         font-size: 18px;
         margin-top: var(--spacing-sm);
         padding: 0 var(--spacing-xs);
+        font-weight: 400;  /* Ensure consistency on mobile */
     }
 
     /* Header Navigation */
