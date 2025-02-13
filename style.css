@@ -138,6 +138,53 @@ section.welcome .title {
     color: var(--color-primary);
 }
 
+/* Welcome Section Base Styles */
+section.welcome {
+    margin: var(--spacing-xl) var(--spacing-xl) 0;
+    text-align: left;
+}
+
+.welcome-text h1 {
+    font-size: 140px;
+    letter-spacing: -0.02em;
+    line-height: 0.9;
+    margin: 0;
+    font-weight: 600;
+}
+
+.welcome-text .highlight {
+    color: var(--color-primary);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    section.welcome {
+        margin: var(--spacing-md) var(--spacing-md);
+        overflow: hidden;
+    }
+
+    .welcome-text h1 {
+        font-size: 48px;
+        line-height: 1.1;
+        white-space: normal;
+        letter-spacing: -0.01em;
+        max-width: 100%;
+    }
+
+    .welcome-text h1 .greeting {
+        display: block;
+        margin-bottom: 4px;
+    }
+
+    .welcome-text h1 .name {
+        display: block;
+    }
+
+    .welcome-text .highlight {
+        display: inline;
+    }
+}
+
 /* -----------------------------
 4. Projects Grid
 ----------------------------- */
