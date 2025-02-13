@@ -159,8 +159,61 @@ section.welcome {
 /* Mobile Styles */
 @media (max-width: 768px) {
     section.welcome {
-        margin: var(--spacing-md) var(--spacing-md);
+        margin: var(--spacing-md);
         overflow: hidden;
+    }
+
+    .welcome-text h1 {
+        font-size: 32px;
+        line-height: 1.2;
+        letter-spacing: -0.01em;
+        margin: 0;
+        overflow: hidden;
+        max-width: 100%;
+    }
+
+    .welcome-text h1 .greeting {
+        display: block;
+        margin-bottom: 4px;
+    }
+
+    .welcome-text h1 .name {
+        display: block;
+    }
+
+    .projects {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+        padding: var(--spacing-sm);
+        margin: 0;
+    }
+
+    .project {
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .project img {
+        height: 240px;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+
+    .project h2 {
+        font-size: 18px;
+        margin-top: var(--spacing-xs);
+        margin-bottom: 0;
+    }
+    
+    .project.sam-kerr,
+    .project.klaviyo,
+    .project.nbl,
+    .project.ultra-mag,
+    .project.paramount,
+    .project.minnows,
+    .project.adidas {
+        grid-column: 1 / -1;
+        grid-row: auto;
     }
 
     .welcome-text h1 {
