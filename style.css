@@ -408,6 +408,20 @@ section.welcome {
     margin-top: var(--spacing-md);
 }
 
+.about-text p {
+    font-size: 20px;
+    line-height: 1.6;
+    color: rgba(21, 21, 21, 0.8);
+}
+
+@media (max-width: 768px) {
+    .about-text p {
+        font-size: 16px;
+        line-height: 1.6;
+        color: rgba(21, 21, 21, 0.8);
+    }
+}
+
 /* About Welcome Section */
 /* Base Styles */
 :root {
