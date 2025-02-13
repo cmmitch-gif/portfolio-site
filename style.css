@@ -651,7 +651,7 @@ section.welcome {
     }
 
     .music-slideshow .slide img {
-        height: 154px;    /* Reduced by 30% from mobile 220px */
+        height: 196px;    /* Reduced by 30% from mobile 220px */
     }
 
     /* Add smooth transitions for swipe */
