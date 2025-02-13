@@ -1221,9 +1221,6 @@ section.welcome {
     }
 }
 
-.music-slideshow .slide img {
-    height: 224px;        /* Reduced by 30% from original 320px */
-}
 
 /* Welcome Section Base Styles */
 section.welcome {
