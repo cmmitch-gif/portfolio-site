@@ -115,7 +115,7 @@ section.welcome .title {
 }
 
 .welcome-text h1 {
-    font-size: clamp(40px, 14vw, 208px);
+    font-size: clamp(32px, 14vw, 208px);
     letter-spacing: -0.02em;
     line-height: 0.9;
     margin: 0;
@@ -1490,7 +1490,7 @@ nav {
 
 /* Base H1 styles affecting About page */
 .about-section h1 {
-    font-size: clamp(40px, 14vw, 208px);  /* This is causing overflow */
+    font-size: clamp(32px, 14vw, 208px);  /* This is causing overflow */
     letter-spacing: -0.02em;
     line-height: 0.9;
     margin: 0;
