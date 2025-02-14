@@ -61,6 +61,8 @@ header {
     width: calc(100% - 120px);
     box-sizing: border-box;
     position: relative;
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
 header a {
@@ -93,6 +95,22 @@ a:hover {
 
 nav a.active {
     color: var(--color-primary);
+}
+
+.mitchell-name {
+    margin-left: calc(var(--spacing-xl) + 8.33%); /* Aligns with grid column 2 */
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    header {
+        padding: 10px var(--spacing-md);
+        width: 100%;
+    }
+
+    .mitchell-name {
+        margin-left: 0; /* Remove margin on mobile */
+    }
 }
 
 /* -----------------------------
