@@ -57,12 +57,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px var(--spacing-xl);
-    width: calc(100% - 120px);
-    box-sizing: border-box;
-    position: relative;
-    max-width: 1440px;
     margin: 0 auto;
+    padding: var(--spacing-sm) 0;
 }
 
 header a {
@@ -73,13 +69,6 @@ header a {
     font-weight: 400;
 }
 
-nav {
-    display: flex;
-    gap: 40px;
-    align-items: center;
-    margin-left: auto;  /* Push nav items to the right */
-    padding-left: var(--spacing-xl);  /* Add space between name and nav */
-}
 
 nav a {
     color: var(--color-text);
@@ -97,14 +86,16 @@ nav a.active {
     color: var(--color-primary);
 }
 
+/* Mitchell Grimes name positioning */
 .mitchell-name {
-    margin-left: calc(var(--spacing-xl) + 8.33%); /* Aligns with grid column 2 */
+    font-weight: 400;
+    grid-column: 1;
 }
 
 /* Mobile styles */
 @media (max-width: 768px) {
     header {
-        padding: 10px var(--spacing-md);
+        padding: var(--spacing-sm) var(--spacing-md);
         width: 100%;
     }
 
@@ -146,11 +137,7 @@ section.welcome .title {
     color: var(--color-primary);
 }
 
-/* Welcome Section Base Styles */
-section.welcome {
-    margin: var(--spacing-xl) var(--spacing-xl) 0;
-    text-align: left;
-}
+
 
 .welcome-text .highlight {
     color: var(--color-primary);
@@ -1255,12 +1242,6 @@ section.welcome {
 }
 
 
-/* Welcome Section Base Styles */
-section.welcome {
-    margin: var(--spacing-xl) var(--spacing-xl) 0;
-    text-align: left;
-}
-
 
 /* Mobile Styles */
 @media (max-width: 768px) {
@@ -1286,10 +1267,7 @@ section.welcome {
 }
 /* Mobile styles */
 @media (max-width: 768px) {
-    header {
-        padding: 10px var(--spacing-md);
-        width: 100%;
-    }
+    
 
     nav {
         gap: 24px;
@@ -1402,19 +1380,10 @@ section.welcome {
     }
 }
 
-/* Header & Navigation */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px var(--spacing-xl);
-    width: calc(100% - 120px);
-}
 
 nav {
     display: flex;
     gap: 40px;
-    margin-left: auto;  /* Push nav items to the right */
     padding-left: var(--spacing-xl);  /* Add space between name and nav */
 }
 
